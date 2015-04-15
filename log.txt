@@ -1,1 +1,4 @@
 You log goes in this  file.
+Start: Tue, 14 Apr 2015 20:00:00 -0500
+End: Tue, 14 Apr 2015 23:57:10 -0500
+Tasks: Finished variables started functions
