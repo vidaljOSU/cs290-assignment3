@@ -1,3 +1,5 @@
+/*jslint plusplus: true, sloppy: true, vars: true, indent: 2, maxlen: 80 */
+
 /*
 Input:
 a: a whole, positive number
@@ -14,7 +16,7 @@ function variableModification(a) {
   var asString;
   var yourNumberIs;
   //your code here
-
+  plus5 = 5 + a;
   //end your code
   return [plus5, asString, yourNumberIs, a];
 }
@@ -42,6 +44,8 @@ return true if c is null, false otherwise
 */
 function isNull(c) {
   //your code here
-  return undefined;
+  if (c === null) {
+    return undefined;
+  }
   //end your code
 }

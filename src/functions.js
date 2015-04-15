@@ -1,3 +1,5 @@
+/*jslint plusplus: true, sloppy: true, vars: true, indent: 2, maxlen: 80 */
+
 /**
 * the \@param notation indicates an input paramater for a function. For example
 * @param {string} foobar - indicates the function should accept a string
@@ -13,7 +15,9 @@
 */
 
 //your code here
-
+function uselessFunction() {
+  return null;
+}
 //end your code
 
 var bar = 'not a function';
@@ -30,7 +34,12 @@ var barType = typeof bar;
 */
 
 //your code here
-
+bar = function (doubleArray) {
+  var i; // Loop control variable
+  for (i = 0; i < doubleArray.length; i++) {
+    doubleArray[i] *= 2;
+  }
+};
 //end your code
 
 /**
@@ -41,9 +50,9 @@ var barType = typeof bar;
 * @property {string} message - the commit message
 */
 function GitLog(hash, date, message) {
-    this.hash = hash;
-    this.date = date;
-    this.message = message;
+  this.hash = hash;
+  this.date = date;
+  this.message = message;
 }
 
 /**

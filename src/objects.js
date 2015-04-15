@@ -1,3 +1,5 @@
+/*jslint plusplus: true, sloppy: true, vars: true, indent: 2, maxlen: 80 */
+
 /**
 * Create an object literal with the following key value pairs:
 * type: {string} 'Goldfish'
