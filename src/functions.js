@@ -16,7 +16,8 @@
 
 //your code here
 function uselessFunction() {
-  return null;
+  var useless = null; // Declared as variable just in case that is necessary
+  return useless;
 }
 //end your code
 
@@ -36,9 +37,15 @@ var barType = typeof bar;
 //your code here
 bar = function (doubleArray) {
   var i; // Loop control variable
+  var success = true;
   for (i = 0; i < doubleArray.length; i++) {
-    doubleArray[i] *= 2;
+    if (!isNaN(doubleArray[i])) {
+      doubleArray[i] *= 2;
+    } else {
+      success = false;
+    }
   }
+  return success;
 };
 //end your code
 
