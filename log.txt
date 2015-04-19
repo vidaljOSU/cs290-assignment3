@@ -7,3 +7,7 @@ Tasks: Finished variables started functions
 Start: Wed, 15 Apr 2015 18:39:00 -0500
 End: Wed, 15 Apr 2015 23:25:12 -0500
 Tasks: Got parseGit done except for date
+
+Start: Sun, 19 Apr 2015 01:30:00 -0500
+End: Sun, 19 Apr 2015 06:08:53 -0500
+Tasks: 30 percent complete with objects
