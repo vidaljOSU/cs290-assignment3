@@ -12,7 +12,13 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  var snack =
+    { type: "Goldfish",
+      brand: "Pepperidge Farm",
+      flavor: "Cheddar",
+      count: 2000 };
+  
+  return snack; //Modify ONLY this line
   //end your code
 }
 
@@ -40,7 +46,48 @@ function returnObjectLiteral() {
 */
 
 //your code here
-
+function MessageLog(user) {
+  this.user = user;
+  this.messages = [5];
+  this.message = {text: "", dir: 0};
+  this.count = 0;
+  this.logMessage = function (messageText, direction) {
+    this.messageText = messageText;
+    this.direction = direction;
+  };
+  
+  function getSentMessage(n) {
+    var message;
+    
+    message = messages[n].logMessage.messageText;
+    
+    return message;
+  }
+  
+  function totalSent() {
+    var sent = 0;
+    var i;
+    
+    for (i = 0; i < messages.length; i++) {
+      if (messages[i].logMessage.direction === 0) {
+        sent++;
+      }
+    }
+    return sent;
+  }
+  
+  function totalReceived() {
+    var received = 0;
+    var i;
+    
+    for (i = 0; i < messages.length; i++) {
+      if (messages[i].logMessage.direction === 1) {
+        received++;
+      }
+    }
+    return received;
+  }
+}
 //end your code
 
 /**
@@ -49,7 +96,14 @@ function returnObjectLiteral() {
 * received.
 */
 //your code here
-
+MessageLog.prototype.lastReceivedMessage = function () {
+  var i;
+  for (i = 0; i < this.messages.length; i++) {
+    if (this.messages[i].logMessage.message.dir === 1) {
+      return this.messages[i].logMessages.messageText;
+    }
+  }
+};
 //end your code
 
 /**
@@ -59,5 +113,8 @@ function returnObjectLiteral() {
 */
 
 //your code here
-
+var myLog = new MessageLog("BlackHatGuy");
+myLog.logMessages("foo", 1);
+myLog.logMessages("bar", 1);
+myLog.logMessages("baz", 1);
 //end your code
