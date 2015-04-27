@@ -47,46 +47,39 @@ function returnObjectLiteral() {
 
 //your code here
 function MessageLog(user) {
+  var message = {text: "", dir: 0};
   this.user = user;
   this.messages = [5];
-  this.message = {text: "", dir: 0};
-  this.count = 0;
+  this.sent = 0;
+  this.received = 0;
   this.logMessage = function (messageText, direction) {
-    this.messageText = messageText;
-    this.direction = direction;
+    var i;
+    
+    if (direction === 0) {
+      this.sent++;
+    } else if (direction === 1) {
+      this.received++;
+    }
+    
+    for (i = this.messages.length; i > 0; i--) {
+      this.messages[i] = this.messages[i - 1];
+    }
+    message = { text: messageText, dir: direction };
+    this.messages[0] = message;
   };
   
-  function getSentMessage(n) {
-    var message;
-    
-    message = messages[n].logMessage.messageText;
-    
-    return message;
-  }
+  this.getSentMessage = function (n) {
+        
+    return this.messages[n].text;
+  };
   
-  function totalSent() {
-    var sent = 0;
-    var i;
-    
-    for (i = 0; i < messages.length; i++) {
-      if (messages[i].logMessage.direction === 0) {
-        sent++;
-      }
-    }
-    return sent;
-  }
+  this.totalSent = function () {
+    return this.sent;
+  };
   
-  function totalReceived() {
-    var received = 0;
-    var i;
-    
-    for (i = 0; i < messages.length; i++) {
-      if (messages[i].logMessage.direction === 1) {
-        received++;
-      }
-    }
-    return received;
-  }
+  this.totalReceived = function () {
+    return this.received;
+  };
 }
 //end your code
 
@@ -99,8 +92,8 @@ function MessageLog(user) {
 MessageLog.prototype.lastReceivedMessage = function () {
   var i;
   for (i = 0; i < this.messages.length; i++) {
-    if (this.messages[i].logMessage.message.dir === 1) {
-      return this.messages[i].logMessages.messageText;
+    if (this.messages[i].dir === 1) {
+      return this.messages[i].text;
     }
   }
 };
@@ -114,7 +107,8 @@ MessageLog.prototype.lastReceivedMessage = function () {
 
 //your code here
 var myLog = new MessageLog("BlackHatGuy");
-myLog.logMessages("foo", 1);
-myLog.logMessages("bar", 1);
-myLog.logMessages("baz", 1);
+var i;
+myLog.logMessage("foo", 1);
+myLog.logMessage("bar", 1);
+myLog.logMessage("baz", 1);
 //end your code
