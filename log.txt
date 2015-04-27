@@ -11,3 +11,7 @@ Tasks: Got parseGit done except for date
 Start: Sun, 19 Apr 2015 01:30:00 -0500
 End: Sun, 19 Apr 2015 06:08:53 -0500
 Tasks: 30 percent complete with objects
+
+Start: Sun, 26 Apr 2015 15:30:00 -0500
+End: Sun, 26 Apr 2015 20:38:15 -0500
+Tasks: Completed assignment
